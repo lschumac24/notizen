@@ -2,9 +2,9 @@
   "name": "notizen",
   "version": "1.0.0",
   "description": "WebApp zur Notizerfassung",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node --experimental-modules --es-module-specifier-resolution=node index.js",
+    "start": "node --experimental-modules --es-module-specifier-resolution=node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,8 +14,8 @@
     "body-parser": "^1.19.0",
     "esm": "^3.2.25",
     "express": "^4.17.1",
-    "express-jwt": "^5.3.1",
-    "jsonwebtoken": "^8.5.1",
+    "hbs": "~4.0.6",
+    "handlebars-helper-equal": "~1.0.0",
     "nedb": "^1.8.0",
     "nedb-promise": "^2.0.1",
     "npm": "^6.12.0"
