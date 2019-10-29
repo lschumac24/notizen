@@ -1,7 +1,7 @@
 
 export class NotesController {
     index(req,res) {
-        res.render('notes');
+        res.render("notes");
     }
 }
 
