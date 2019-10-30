@@ -11,11 +11,8 @@ const app = express();
 // view engine setup
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
-
-
 app.engine('hbs', hbs.express4());
-app.set('vew engine', 'hbs');
-app.set('views', path.join(__dirname, 'views'));
+
 registerHelpers(hbs);
 
 const router = express.Router();
@@ -26,8 +23,8 @@ app.use(router);
 
 app.use(bodyParser.json());
 app.use(overrideMiddleware);
-
-app.use("/", notesRoutes);
+app.use(notesRoutes);
+//app.use("/", notesRoutes);
 
 const hostname = '127.0.0.1';
 const port = 3001;

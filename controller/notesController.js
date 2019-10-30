@@ -1,7 +1,12 @@
+import {notesStore} from '../services/notesStore'
 
 export class NotesController {
-    index(req,res) {
+    displayNotes(req, res) {
         res.render("notes");
+    }
+
+    createNote(req, res) {
+        res.render("createNote");
     }
 }
 

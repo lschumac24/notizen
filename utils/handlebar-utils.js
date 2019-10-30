@@ -1,5 +1,5 @@
 export function registerHelpers(hbs) {
-    hbs.registerHelper('if_eq', function (a, b, opts) {
+    hbs.registerHelper('ifeq', function (a, b, opts) {
         if (a === b)
             return opts.fn(this);
         else
