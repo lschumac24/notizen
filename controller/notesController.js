@@ -4,7 +4,7 @@ import {configurator} from './config'
 export class NotesController {
     displayNotes(req, res) {
         const config = configurator.configure(req, res);
-        res.render("notes", {'config': config});
+        res.render("notes", {'config': config, layout: 'layout'});
     }
 
     createNote(req, res) {
