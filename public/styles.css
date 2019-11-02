@@ -159,3 +159,43 @@ textarea {
 .submit input {
     flex-grow: 1;
 }
+
+@media only screen and (max-width: 660px) {
+    header .toolbox {
+        display: flex;
+        flex-flow: column;
+    }
+
+    header .toolbox .button {
+        margin: 0 0 1em 0;
+        width: inherit;
+        float: none;
+    }
+
+    section .element1 {
+        margin-bottom: 1em;
+    }
+
+    section .element2 {
+        width: 12em;
+    }
+
+    section .element2.button {
+        float: right;
+    }
+
+    section .box:nth-child(2) {
+        flex-flow: column;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    label {
+        display: block;
+    }
+
+    input,
+    textarea {
+        max-width: 100%;
+    }
+}
