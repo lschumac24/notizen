@@ -6,15 +6,15 @@
         {{#with note}}
         <div>
             <label for="title">Titel</label>
-            <input name="title" type="email" value="{{title}}" required autofocus>
+            <input name="title" value="{{title}}" required autofocus>
         </div>
         <div>
             <label for="description">Beschreibung</label>
-            <textarea type="text" name="description"required>{{content}}</textarea>
+            <textarea type="text" name="description"required>{{description}}</textarea>
         </div>
         <div>
             <label for="importance">Wichtigkeit</label>
-            <input name="importancen" type="number" min="1" max="5" step="1" value="{{rating}}" required>
+            <input name="importance" type="number" min="1" max="5" step="1" value="{{importance}}" required>
         </div>
         <div>
             <label for="dueDate">Fertig bis</label>
@@ -22,11 +22,11 @@
         </div>
         <div>
             <label for="done">Erledigt</label>
-            <input class="done" name="done" type="checkbox" required {{#if done}}checked{{/if}}>
+            <input class="done" name="done" type="checkbox" {{#if done}}checked{{/if}}>
         </div>
         <div>
-            <input name="submitNote" type="submit" value="Anlegen">
-            <a href="./" class="button">Abbruch</a>
+            <input name="submitNote" class="button" type="submit" value="Speichern">
+            <a href="/" class="button">Abbruch</a>
         </div>
         {{/with}}
     </form>

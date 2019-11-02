@@ -5,4 +5,11 @@ export function registerHelpers(hbs) {
         else
             return opts.inverse(this);
     });
+
+    hbs.registerHelper('repeat', (n, blockData) => {
+        let repeatedBlock = '';
+        for(let i = 0; i < n; i++)
+            repeatedBlock += blockData.fn(i);
+        return repeatedBlock;
+    });
 }
