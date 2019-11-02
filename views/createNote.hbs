@@ -4,7 +4,7 @@
     </header>
     <form id="createNote" method="POST">
         <div>
-            <label for="title">Title</label>
+            <label for="title">Titel</label>
             <input name="title" type="email" placeholder="Your username is your email address" required autofocus>
         </div>
         <div>
@@ -23,10 +23,11 @@
             <label for="done">Erledigt</label>
             <input class="done" name="done" type="checkbox">
         </div>
-        <div>
-            <input name="submitNote" type="submit" value="Anlegen">
-            <input name="submitNote" value="Abbruch">
-
+        <div class="submit">
+            <input name="submitNote" class="button" type="submit" value="Anlegen">
+            <a href="./">
+                <div class="button">Abbruch</div>
+            </a>
         </div>
     </form>
 </main>

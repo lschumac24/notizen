@@ -114,3 +114,48 @@ form {
     flex-flow: column;
     padding: 2em;
 }
+
+form > div {
+    display: flex;
+    flex-flow: row;
+    margin-bottom: 0.5em;
+}
+
+label{
+    height: 2em;
+    line-height: 1.5em;
+    width: 20%;
+}
+
+input,
+textarea {
+    padding: 0.2em 1em;
+    resize: none;
+    height: 2em;
+    line-height: 1.5em;
+    width: 100%;
+    max-width: 80%;
+    outline: none;
+    border: 1px solid black;
+}
+
+textarea {
+    height: 5em;
+}
+
+.done {
+    width: 2em;
+}
+
+.submit {
+    display: flex;
+}
+
+.submit a {
+    margin-right: 2em;
+    flex-grow: 1;
+}
+
+.submit input {
+    flex-grow: 1;
+}

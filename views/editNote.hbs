@@ -5,7 +5,7 @@
     <form id="createNote" method="POST">
         {{#with note}}
         <div>
-            <label for="title">Title</label>
+            <label for="title">Titel</label>
             <input name="title" type="email" value="{{title}}" required autofocus>
         </div>
         <div>
@@ -26,8 +26,7 @@
         </div>
         <div>
             <input name="submitNote" type="submit" value="Anlegen">
-            <input name="submitNote" value="Abbruch">
-
+            <a href="./" class="button">Abbruch</a>
         </div>
         {{/with}}
     </form>
