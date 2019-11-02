@@ -1,33 +1,35 @@
 <main>
     <header>
-        <h1>Note ToDo</h1>
+        <h1>Edit Note</h1>
     </header>
     <form id="createNote" method="POST">
+        {{#with note}}
         <div>
             <label for="title">Title</label>
-            <input name="title" type="email" placeholder="Your username is your email address" required autofocus>
+            <input name="title" type="email" value="{{title}}" required autofocus>
         </div>
         <div>
             <label for="description">Beschreibung</label>
-            <textarea name="description" type="text" placeholder="yolo" required></textarea>
+            <textarea type="text" name="description"required>{{content}}</textarea>
         </div>
         <div>
             <label for="importance">Wichtigkeit</label>
-            <input name="importance" type="number" min="1" max="5" step="1" value="1" required>
+            <input name="importancen" type="number" min="1" max="5" step="1" value="{{rating}}" required>
         </div>
         <div>
             <label for="dueDate">Fertig bis</label>
-            <input name="dueDate" placeholder="cool beans" required>
+            <input name="dueDate" value="{{dueDate}}" required>
         </div>
         <div>
             <label for="done">Erledigt</label>
-            <input class="done" name="done" type="checkbox">
+            <input class="done" name="done" type="checkbox" required {{#if done}}checked{{/if}}>
         </div>
         <div>
             <input name="submitNote" type="submit" value="Anlegen">
             <input name="submitNote" value="Abbruch">
 
         </div>
+        {{/with}}
     </form>
 </main>
 
