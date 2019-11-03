@@ -25,7 +25,7 @@ button,
     line-height: 2.5em;
     text-align: center;
     border: none;
-    border-radius: 3px;
+    border-radius: 6px;
     box-shadow: inset 0 -1px 0 1px rgba(0, 0, 0, .1), inset 0 -10px 20px rgba(0, 0, 0, .1);
     text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
     cursor: pointer;
@@ -71,6 +71,14 @@ main header .button {
     margin-bottom: 30px;
 }
 
+section {
+    max-width: 800px;
+    margin-bottom: 2em;
+    padding: 1em;
+    display: flex;
+    flex-flow: column;
+}
+
 section .toolbox {
     display: flex;
     flex-flow: row;
@@ -103,26 +111,22 @@ section .title {
     display: inline-block;
 }
 
-section label {
-    display: flex;
-}
-
 form {
     display: flex;
     flex-flow: column;
     padding: 2em;
 }
 
-form > div {
+label {
     display: flex;
     flex-flow: row;
     margin-bottom: 0.5em;
 }
 
-label {
-    display: flex;
-    flex-flow: row;
-    margin-bottom: 0.5em;
+label div {
+    height: 2em;
+    line-height: 1.5em;
+    width: 20%;
 }
 
 input,
