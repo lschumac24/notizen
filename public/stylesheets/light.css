@@ -1,5 +1,5 @@
 body {
-    background: white;
+    background: beige;
     color: #372E29;
 }
 
@@ -9,12 +9,12 @@ a {
 
 button,
 .button {
-    background: linear-gradient(to bottom right, #7F7C77 0%, #8A8681 100%);
+    background: #5a3812;
     color: white;
 }
 
 .active {
-    background: #6E6B67;
+    background: #3d290a;
 }
 
 .card_header {

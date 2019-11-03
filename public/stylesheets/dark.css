@@ -1,6 +1,6 @@
 body {
-    background: #372E29;
-    color: white;
+    background: #1c1c1c;
+    color: limegreen;
 }
 
 a {
@@ -9,37 +9,37 @@ a {
 
 button,
 .button {
-    background: linear-gradient(to bottom right, #7F7C77 0%, #8A8681 100%);
-    color: black;
+    background: #372E29;
+    color: limegreen;
 }
 
 button:hover,
 .button:hover {
-    background: #6E6B67;
+    background: #372727;
 }
 
 .active {
-    background: #6E6B67;
+    background: #372E29;
 }
 
 .card_header {
     border-radius: 3px;
     box-shadow: inset 0 -1px 0 1px rgba(0, 0, 0, .1), inset 0 -10px 20px rgba(0, 0, 0, .1);
     text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
-    background-color: lightgrey;
+    background-color: #372727;;
 }
 
 .card_box {
     border-radius: 3px;
     box-shadow: inset 0 -1px 0 1px rgba(0, 0, 0, .1), inset 0 -10px 20px rgba(0, 0, 0, .1);
     text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
-    background-color: #63534A;
+    background-color: #372727;;
 }
 
 input,
 textarea,
 input::placeholder,
 textarea::placeholder {
-    background-color: #947C6E;
-    color: white;
+    background-color: #372E29;
+    color: limegreen;
 }
