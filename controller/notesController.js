@@ -1,17 +1,17 @@
 import {notesStore} from '../services/notesStore'
-import {configurator} from './config'
+import {loadAndAdjustConfigFromSession} from './config'
 
 export class NotesController {
 
     displayNotes(req, res) {
-        const config = configurator.configure(req, res);
+        const config = loadAndAdjustConfigFromSession(req, res);
         notesStore.all(config, (err, notes) => {
             res.render("notes", {'config': config, layout: 'layout', 'notes': notes});
         });
     }
 
     createNote(req, res) {
-        const config = configurator.configure(req, res);
+        const config = loadAndAdjustConfigFromSession(req, res);
         res.render("createNote", {'config': config, layout: 'layout'});
     }
 
@@ -27,7 +27,7 @@ export class NotesController {
     }
 
     editNote(req, res) {
-        const config = configurator.configure(req, res);
+        const config = loadAndAdjustConfigFromSession(req, res);
         const _id = req.params.id;
 
         notesStore.getNoteToEdit(_id, (err, note) => {
@@ -42,11 +42,6 @@ export class NotesController {
             res.redirect('/');
         });
     };
-
-    toggleStyle(req, res) {
-        configurator.toggleStyle(req, res);
-        res.redirect('/');
-    }
 
 }
 

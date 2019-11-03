@@ -12,4 +12,11 @@ export function registerHelpers(hbs) {
             repeatedBlock += blockData.fn(i);
         return repeatedBlock;
     });
+
+    hbs.registerHelper('ifStartsWith', (a, b, opts) => {
+        if (a.startsWith(b))
+            return opts.fn(this);
+        else
+            return opts.inverse(this);
+    });
 }
