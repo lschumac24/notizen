@@ -151,12 +151,12 @@ textarea {
     display: flex;
 }
 
-.submit a {
+.submit > a {
     margin-right: 2em;
     flex-grow: 1;
 }
 
-.submit input {
+.submit > input {
     flex-grow: 1;
 }
 
