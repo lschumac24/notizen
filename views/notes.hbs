@@ -29,10 +29,10 @@
                 <div class="toolbox">
                     <div class="element2">{{dueDate}}</div>
                     <div class="element1 title">{{title}}</div>
-                    <div class="element2 star">
-                        <div class="star_box">
+                    <div class="element2 rating">
+                        <div class="rating">
                             {{#repeat rating}}
-                                <span class="icon-star-full"></span>
+                                <span class="rating-icon"></span>
                             {{/repeat}}
                         </div>
                     </div>
@@ -40,8 +40,8 @@
                 <div class="toolbox">
                     <div class="element2">
                         <label class="first">
-                            <span>Erledigt</span>
                             <input type="checkbox" {{#if done}} checked{{/if}} disabled>
+                            <span>Erledigt</span>
                         </label>
                     </div>
                     <div class="element1">{{content}}</div>

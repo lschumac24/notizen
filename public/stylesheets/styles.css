@@ -45,7 +45,8 @@ main header {
 }
 
 main header .toolbox {
-    margin-bottom: 1em;
+    border-radius: 0.3rem;
+    padding: 1rem;
 }
 
 main header .button {
@@ -54,7 +55,7 @@ main header .button {
     float: left;
 }
 
-main header .last {
+#btnStyleSwitcher {
     float: right;
     margin-right: 0;
 }
@@ -107,6 +108,10 @@ section .star .star_box {
 
 section .star .star_box span {
     line-height: 2.5em;
+}
+
+section label {
+    display: flex;
 }
 
 form {
@@ -169,7 +174,7 @@ textarea {
     header .toolbox .button {
         margin: 0 0 1em 0;
         width: inherit;
-        float: none;
+        float: left;
     }
 
     section .element1 {
