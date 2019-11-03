@@ -12,7 +12,7 @@ export class NotesStore {
     }
 
     all(config, callback) {
-        let filter = config.filter ? { done: false } : null;
+        let filter = config.filter ? { done: 'off' } : null;
 
         this.db.find(filter).sort(sortOrder(config)).exec(callback);
     }

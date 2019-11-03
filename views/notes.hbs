@@ -11,7 +11,7 @@
         </div>
         <div class="toolbox">
             <a href="./?filter={{#if config.filter}}false{{else}}true{{/if}}" class="button {{#if config.filter}}active{{/if}}">
-                {{#if config.filter}}Anzeigen{{else}}Verbergen{{/if}}
+                {{#if config.filter}}Alle anzeigen{{else}}Fertige verbergen{{/if}}
             </a>
         </div>
     </header>
@@ -19,7 +19,7 @@
         {{#each notes}}
             <section class="content">
                 <div class="toolbox">
-                    <div class="element2">{{dueDate}}</div>
+                    <div class="element2">{{fromNow}}</div>
                     <div class="element1 title">{{title}}</div>
                     <div class="element2 star">
                         <div class="star_box">
@@ -33,7 +33,7 @@
                     <div class="element2">
                         <label class="first">
                             <span>Erledigt</span>
-                            <input type="checkbox" {{#if done}} checked{{/if}} disabled>
+                            <input type="checkbox" {{#ifeq done 'on'}} checked{{/ifeq}} disabled>
                         </label>
                     </div>
                     <div class="element1">{{content}}</div>

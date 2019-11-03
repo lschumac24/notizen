@@ -18,11 +18,11 @@
         </div>
         <div>
             <label for="dueDate">Fertig bis</label>
-            <input name="dueDate" value="{{dueDate}}" required>
+            <input type="date" name="dueDate" value="{{dueDate}}" required>
         </div>
         <div>
             <label for="done">Erledigt</label>
-            <input class="done" name="done" type="checkbox" {{#if done}}checked{{/if}}>
+            <input class="done" name="done" type="checkbox" {{#ifeq done 'on'}}checked{{/ifeq}}>
         </div>
         <div class="submit">
             <input class="button" type="submit" value="Speichern">
