@@ -1,13 +1,13 @@
 <main>
     <header>
         <div class="toolbox">
-            <a href="/create/" class="button btnCreate">Create new Note</a>
-            <a href="./?style={{#if config.style}}false{{else}}true{{/if}}" class="button {{#if config.style}}active{{/if}}">Style Switcher</a>
+            <a href="/create/" class="button btnCreate">Notiz erstellen</a>
+            <a href="./?style={{#if config.style}}false{{else}}true{{/if}}" class="button {{#if config.style}}active{{/if}}">Style wechseln</a>
         </div>
         <div class="toolbox">
-            <a href="./?sortBy=dueDate{{#ifeq    config.sortBy 'dueDate_asc'   }}_desc{{else}}_asc{{/ifeq}}" class="button {{#ifStartsWith config.sortBy 'dueDate'}}   active{{/ifStartsWith}}">By finished Date</a>
-            <a href="./?sortBy=createDate{{#ifeq config.sortBy 'createDate_asc'}}_desc{{else}}_asc{{/ifeq}}" class="button {{#ifStartsWith config.sortBy 'createDate'}}active{{/ifStartsWith}}">By created Date</a>
-            <a href="./?sortBy=importance{{#ifeq config.sortBy 'importance_asc'}}_desc{{else}}_asc{{/ifeq}}" class="button {{#ifStartsWith config.sortBy 'importance'}}active{{/ifStartsWith}}">By Importance</a>
+            <a href="./?sortBy=dueDate{{#ifeq    config.sortBy 'dueDate_asc'   }}_desc{{else}}_asc{{/ifeq}}" class="button {{#ifStartsWith config.sortBy 'dueDate'}}   active{{/ifStartsWith}}">Nach Enddatum</a>
+            <a href="./?sortBy=createDate{{#ifeq config.sortBy 'createDate_asc'}}_desc{{else}}_asc{{/ifeq}}" class="button {{#ifStartsWith config.sortBy 'createDate'}}active{{/ifStartsWith}}">Nach Erstelldatum</a>
+            <a href="./?sortBy=importance{{#ifeq config.sortBy 'importance_asc'}}_desc{{else}}_asc{{/ifeq}}" class="button {{#ifStartsWith config.sortBy 'importance'}}active{{/ifStartsWith}}">Nach Wichtigkeit</a>
         </div>
         <div class="toolbox">
             <a href="./?filter={{#if config.filter}}false{{else}}true{{/if}}" class="button {{#if config.filter}}active{{/if}}">
@@ -21,10 +21,10 @@
                 <div class="toolbox">
                     <div class="element2">{{fromNow}}</div>
                     <div class="element1 title">{{title}}</div>
-                    <div class="element2 rating">
-                        <div class="rating">
-                            {{#repeat rating}}
-                                <span class="rating-icon"></span>
+                    <div class="element2 importance">
+                        <div class="importance">
+                            {{#repeat importance}}
+                                <span class="importance-icon"></span>
                             {{/repeat}}
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                     </div>
                     <div class="element1">{{content}}</div>
                     <a href="./{{_id}}">
-                        <div class="element2 button">edit</div>
+                        <div class="element2 button">bearbeiten</div>
                     </a>
                 </div>
             </section>
