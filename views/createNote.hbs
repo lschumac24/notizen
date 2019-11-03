@@ -17,14 +17,14 @@
         </div>
         <div>
             <label for="dueDate">Fertig bis</label>
-            <input name="dueDate" placeholder="cool beans" required>
+            <input type="date" name="dueDate" value="{{dueDate}}" required>
         </div>
         <div>
             <label for="done">Erledigt</label>
             <input class="done" name="done" type="checkbox">
         </div>
         <div class="submit">
-            <input name="submitNote" class="button" type="submit" value="Anlegen">
+            <input class="button" type="submit" value="Anlegen">
             <a href="/" class="button">Abbruch</a>
         </div>
     </form>

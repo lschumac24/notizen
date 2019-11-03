@@ -1,61 +1,40 @@
-export class Configurator {
-    constructor(){
-        this.config = {
-            style: "light",
+export function loadAndAdjustConfigFromSession(req, res) {
+
+    let config = {};
+
+    if(req.session.config){
+        config = req.session.config;
+    } else {
+        config = {
+            style: false,
             filter: false,
-            order: "dueDate",
-            asc: 1
-        }
-    }
-    configure(req, res) {
-        this.parseCookie(req);
-
-        if (req.query.order !== undefined){
-            let split = req.query.order.split('_');
-            this.config.order = split[0];
-            this.config.asc = (split[1] === 'asc') ? 1 : -1;
-        }
-
-        if (req.query.style !== undefined){
-            this.config.style = req.query.style;
-        }
-
-        if (req.query.filter !== undefined){
-            this.config.filter = !!req.query.filter;
-        }
-        this.updateCookie(res)
-        return this.config;
+            sortBy: "dueDate_asc",
+        };
+        req.session.config = config;
     }
 
-    parseCookie(req){
-        if (typeof req.cookie !== "undefined"){
-            if (req.cookie.config) {
-                this.config = JSON.parse(req.cookie.config);
-            }
+    if (req.query.sortBy !== undefined){
+
+        switch (req.query.sortBy){
+            case 'dueDate_asc':
+            case 'createDate_asc':
+            case 'importance_asc':
+            case 'dueDate_desc':
+            case 'createDate_desc':
+            case 'importance_desc':
+                config.sortBy = req.query.sortBy;
+                break;
+            default:
+                break;
         }
     }
 
-    updateCookie(res){
-        const configStr = JSON.stringify(this.config);
-        if (res.cookie === undefined) {
-            res.cookie = {};
-        }
-        res.cookie.config = configStr;
-        res.cookie('config', configStr, {
-            maxAge: 1000000
-        });
+    if (req.query.style !== undefined){
+        config.style = (req.query.style === 'true');
     }
 
-    toggleStyle(req, res) {
-        this.parseCookie(req);
-        if(this.style === "dark") {
-            this.style = "light";
-        }
-        else {
-            this.style = "dark";
-        }
-        this.updateCookie(res);
+    if (req.query.filter !== undefined){
+        config.filter = (req.query.filter === 'true');
     }
+    return config;
 }
-
- export const configurator = new Configurator();

@@ -12,11 +12,11 @@
     <meta name="author" content="Boillat Yves, Schumacher Lorenzo">
 
     <link rel="stylesheet" href="/stylesheets/styles.css">
-    {{#ifeq config.style "dark"}}
+    {{#if config.style}}
         <link rel="stylesheet" href="/stylesheets/dark.css" />
     {{else}}
         <link rel="stylesheet" href="/stylesheets/light.css" />
-    {{/ifeq}}
+    {{/if}}
 </head>
 
 <body>
