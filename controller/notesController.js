@@ -43,6 +43,11 @@ export class NotesController {
         });
     };
 
+    toggleStyle(req, res) {
+        configurator.toggleStyle(req, res);
+        res.redirect('/');
+    }
+
 }
 
 export const notesController = new NotesController();
