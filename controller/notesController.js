@@ -16,11 +16,7 @@ export class NotesController {
     }
 
     createNotePost(req, res) {
-        if (!!req.body.cancel) {
-            res.redirect('/');
-            return;
-        }
-        req.body.createdOnDate = Date.now();
+        req.body.createDate = Date.now();
         notesStore.add(req.body, (err, note) => {
             res.redirect('/');
         });
