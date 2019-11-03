@@ -2,16 +2,14 @@
     <header>
         <div class="toolbox">
             <a href="/create/" class="button btnCreate">Notiz erstellen</a>
-            <a href="./?style={{#if config.style}}false{{else}}true{{/if}}" class="button {{#if config.style}}active{{/if}}">Style wechseln</a>
+            <a href="./?style={{#if config.style}}false{{else}}true{{/if}}" id="btnStyleSwitcher" class="button {{#if config.style}}active{{/if}}">Style wechseln</a>
         </div>
         <div class="toolbox">
             <a href="./?sortBy=dueDate{{#ifeq    config.sortBy 'dueDate_asc'   }}_desc{{else}}_asc{{/ifeq}}" class="button {{#ifStartsWith config.sortBy 'dueDate'}}   active{{/ifStartsWith}}">Nach Enddatum</a>
             <a href="./?sortBy=createDate{{#ifeq config.sortBy 'createDate_asc'}}_desc{{else}}_asc{{/ifeq}}" class="button {{#ifStartsWith config.sortBy 'createDate'}}active{{/ifStartsWith}}">Nach Erstelldatum</a>
             <a href="./?sortBy=importance{{#ifeq config.sortBy 'importance_asc'}}_desc{{else}}_asc{{/ifeq}}" class="button {{#ifStartsWith config.sortBy 'importance'}}active{{/ifStartsWith}}">Nach Wichtigkeit</a>
-        </div>
-        <div class="toolbox">
-            <a href="./?filter={{#if config.filter}}false{{else}}true{{/if}}" class="button {{#if config.filter}}active{{/if}}">
-                {{#if config.filter}}Alle anzeigen{{else}}Fertige verbergen{{/if}}
+            <a href="./?filter={{#if config.filter}}false{{else}}true{{/if}}"  id="filterButton" class="button {{#if config.filter}}active{{/if}}">
+            {{#if config.filter}}Alle anzeigen{{else}}Fertige verbergen{{/if}}
             </a>
         </div>
     </header>
@@ -36,10 +34,12 @@
                             <input type="checkbox" {{#ifeq done 'on'}} checked{{/ifeq}} disabled>
                         </label>
                     </div>
-                    <div class="element1">{{description}}</div>
-                    <a href="./{{_id}}">
-                        <div class="element2 button">bearbeiten</div>
-                    </a>
+                    <div class="editChnopf">
+                        <div class="element1">{{description}}</div>
+                        <a href="./{{_id}}">
+                            <div class="element2 button">bearbeiten</div>
+                        </a>
+                    </div>
                 </div>
             </section>
         {{/each}}
